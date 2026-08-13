@@ -1,10 +1,38 @@
 package br.com.meusistema.model;
 
     public class Carro {
-        public String modelo;
-        public String cor;
+        private String modelo;
+        private String cor;
+        private int velocidade;
 
         public void buzinar() {
             System.out.println("O " + modelo +" " + " fez BIIIII BIIIIII!");
         }
+
+        public String getModelo() {
+            return modelo;
+        }
+
+        public void setModelo(String modelo) {
+            this.modelo = modelo;
+        }
+
+        public String getCor() {
+            return cor;
+        }
+
+        public void setCor(String cor) {
+            this.cor = cor;
+        }
+
+        public int getVelocidade() {
+            return velocidade;
+        }
+
+        public void setVelocidade(int velocidade) {
+            if (velocidade < 0) {System.out.println("Erro: Velocidade não pode sernegativa!");
+        } else {
+            this.velocidade = velocidade;
+        }
     }
+}
