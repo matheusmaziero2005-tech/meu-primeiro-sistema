@@ -1,4 +1,4 @@
-// NivelInsuficienteException.java
+
 package br.com.nexustech.exception;
 
 public class NivelInsuficienteException extends RuntimeException {
