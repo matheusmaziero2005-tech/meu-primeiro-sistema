@@ -1,5 +1,5 @@
 
-// BanidoException.java
+
 package br.com.nexustech.exception;
 
 public class BanidoException extends Exception {
