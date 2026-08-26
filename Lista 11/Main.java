@@ -1,4 +1,4 @@
-// Main.java
+
 
 
 import br.com.nexustech.exception.BanidoException;
@@ -13,7 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // EXERCÍCIO 1 e 2
         int kills = 15;
         int deaths = 0;
 
@@ -23,7 +22,7 @@ public class Main {
             System.out.println("Taxa K/D: Jogador Invicto!");
         }
 
-        // EXERCÍCIO 3
+        
         String[] inventario = new String[3];
 
         try {
@@ -32,7 +31,6 @@ public class Main {
             System.out.println("Inventário cheio!");
         }
 
-        // EXERCÍCIO 4
         String jogador = null;
 
         if (jogador != null) {
@@ -41,7 +39,6 @@ public class Main {
             System.out.println("Jogador desconectado");
         }
 
-        // EXERCÍCIO 6 e 7
         try {
             conectarServidor();
         } catch (Exception e) {
@@ -50,7 +47,7 @@ public class Main {
             System.out.println("Fechando portas de rede do jogo...");
         }
 
-        // EXERCÍCIO 9
+       
         Masmorra masmorra = new Masmorra();
 
         try {
@@ -59,20 +56,20 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        // NÍVEL BOSS
+        
         Matchmaker matchmaker = new Matchmaker();
 
         ModoJogo casual = new ModoCasual();
         ModoJogo ranqueado = new ModoRanqueado();
 
-        // Jogador banido
+       
         try {
             matchmaker.encontrarSala(casual, true);
         } catch (BanidoException e) {
             System.out.println(e.getMessage());
         }
 
-        // Jogador não banido
+        
         try {
             matchmaker.encontrarSala(ranqueado, false);
         } catch (BanidoException e) {
@@ -80,7 +77,7 @@ public class Main {
         }
     }
 
-    // EXERCÍCIO 5
+    
     public static void conectarServidor() throws Exception {
         throw new Exception("Servidor caiu!");
     }
