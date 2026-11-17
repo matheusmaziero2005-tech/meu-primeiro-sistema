@@ -1,0 +1,8 @@
+package br.com.bookstore.dao;
+private Livro mapearLinha(ResultSet rs) throws SQLException {
+    Long id = rs.getLong("id");
+    String titulo = rs.getString("titulo");
+    String autor = rs.getString("autor");
+    double preco = rs.getDouble("preco");
+    return new Livro(id, titulo, autor, preco);
+}
