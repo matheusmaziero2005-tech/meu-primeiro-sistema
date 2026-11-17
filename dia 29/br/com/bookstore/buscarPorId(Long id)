@@ -1,0 +1,18 @@
+package br.com.bookstore.dao;
+@Override
+public Optional<Livro> buscarPorId(Long id) {
+    String sql = "SELECT id, titulo, autor, preco FROM livros WHERE id = ?;";
+    try (Connection conn = ConexaoFactory.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        
+        stmt.setLong(1, id);
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                return Optional.of(mapearLinha(rs));
+            }
+            return Optional.empty();
+        }
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao consultar livro por ID: " + e.getMessage(), e);
+    }
+}
